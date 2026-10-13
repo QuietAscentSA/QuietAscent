@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiet Ascent (Pty) Ltd</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #f7f8fa;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    /* Countdown Screen */
+    #countdown-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.8s ease, visibility 0.8s;
+    }
+
+    #countdown-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .countdown-logo {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #1a365d;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .countdown-logo span {
+      color: #b8860b;
+    }
+
+    .countdown-sub {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 40px;
+    }
+
+    #countdown {
+      font-size: 3.2rem;
+      font-weight: 300;
+      color: #1a365d;
+      letter-spacing: 3px;
+    }
+
+    /* Header */
+    header {
+      background: #ffffff;
+      padding: 22px 40px;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: #1a365d;
+    }
+
+    .logo span {
+      color: #b8860b;
+    }
+
+    nav a {
+      margin-left: 28px;
+      text-decoration: none;
+      color: #444;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #1a365d;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 90px 20px 70px;
+      background: #ffffff;
+    }
+
+    .hero h1 {
+      font-size: 2.7rem;
+      color: #1a365d;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #555;
+      max-width: 580px;
+      margin: 0 auto 28px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #f0f4f8;
+      color: #1a365d;
+      padding: 9px 22px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      border: 1px solid #d1d9e0;
+    }
+
+    /* Sections */
+    section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 70px 30px;
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      color: #1a365d;
+      margin-bottom: 22px;
+      font-weight: 600;
+    }
+
+    .about-text {
+      font-size: 1.08rem;
+      color: #444;
+      max-width: 680px;
+    }
+
+    /* Founder */
+    .founder-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 45px 40px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .founder-card h3 {
+      font-size: 1.5rem;
+      color: #1a365d;
+      margin-bottom: 6px;
+    }
+
+    .founder-card .role {
+      color: #666;
+      font-size: 1.05rem;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .service-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .service-card h4 {
+      color: #1a365d;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    /* Important Notice */
+    .notice {
+      background: #fffbeb;
+      border: 1px solid #f0e0b2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 20px auto 60px;
+      max-width: 720px;
+      text-align: center;
+      color: #7a5c00;
+      font-size: 1.02rem;
+      line-height: 1.7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #888;
+      font-size: 0.9rem;
+      border-top: 1px solid #e5e7eb;
+      background: #ffffff;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+      #countdown {
+        font-size: 2.4rem;
+      }
+      header {
+        padding: 18px 20px;
+      }
+      nav a {
+        margin-left: 16px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Countdown Screen -->
+  <div id="countdown-screen">
+    <div class="countdown-logo">Quiet <span>Ascent</span></div>
+    <div class="countdown-sub">Coming Soon</div>
+    <div id="countdown">00:00:00:00</div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Quiet <span>Ascent</span></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Future Services</a>
+      <a href="#founder">Founder</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Quiet Ascent (Pty) Ltd</h1>
+    <p>Building steadily. Focused on long-term growth, disciplined capital management, and quiet progress.</p>
+    <div class="badge">Coming Soon • Not yet authorized</div>
+  </section>
+
+  <!-- Important Notice -->
+  <div class="notice">
+    <strong>Coming Soon / Not yet authorized</strong><br><br>
+    Quiet Ascent (Pty) Ltd is still underway. The company needs to record growth, stability, more assets, and room before it can open to the public. This website is for informational purposes only.
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About</h2>
+    <p class="about-text">
+      Quiet Ascent was founded with a clear long-term vision. It began with personal net worth management and structured growth, and is being carefully built into a full investment company.
+      <br><br>
+      The foundation is being laid with discipline, consistency, and patience.
+    </p>
+  </section>
+
+  <!-- Future Services -->
+  <section id="services">
+    <h2>What Will Be Available</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h4>Wealth Management</h4>
+        <p>Structured long-term wealth building and capital growth.</p>
+      </div>
+      <div class="service-card">
+        <h4>Investments</h4>
+        <p>Disciplined investment strategies focused on sustainable returns.</p>
+      </div>
+      <div class="service-card">
+        <h4>Insurance & Policies</h4>
+        <p>Future protection, covers, and policy solutions.</p>
+      </div>
+      <div class="service-card">
+        <h4>Inheritance Planning</h4>
+        <p>Legacy and estate structuring for the next generation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder -->
+  <section id="founder">
+    <h2>Founder</h2>
+    <div class="founder-card">
+      <h3>Thabang Charlie Chiloane</h3>
+      <p class="role">Founder of Quiet Ascent (Pty) Ltd</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 Quiet Ascent (Pty) Ltd. All rights reserved.<br>
+    Building steadily.
+  </footer>
+
+  <script>
+    // Countdown (set to 1 Jan 2027 – you can change the date)
+    const launchDate = new Date("January 1, 2027 00:00:00").getTime();
+
+    const timer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        String(days).padStart(2, '0') + ":" +
+        String(hours).padStart(2, '0') + ":" +
+        String(minutes).padStart(2, '0') + ":" +
+        String(seconds).padStart(2, '0');
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "COMING SOON";
+      }
+    }, 1000);
+
+    // Hide countdown after 5.5 seconds
+    setTimeout(function() {
+      document.getElementById("countdown-screen").classList.add("hidden");
+    }, 5500);
+  </script>
+
+</body>
+  </html>
