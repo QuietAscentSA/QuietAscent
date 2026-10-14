@@ -275,4 +275,121 @@
   <div id="countdown-screen">
     <div class="countdown-logo">Quiet <span>Ascent</span></div>
     <div class="countdown-sub">The future is in our hands</div>
-    <div id="countdown
+    <div id="countdown">00 : 00 : 00 : 00</div>
+    <div class="countdown-labels">
+      <span>DAYS</span>
+      <span>HOURS</span>
+      <span>MINS</span>
+      <span>SECS</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Quiet <span>Ascent</span></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#vision">Vision</a>
+      <a href="#founder">Founder</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section class="hero" id="home">
+    <h1>Quiet Ascent (Pty) Ltd</h1>
+    <div class="tagline">The future is in our hands</div>
+    <p>Building steadily with discipline, structure, and long-term vision.</p>
+    <div class="badge">Coming Soon • Not yet authorized</div>
+  </section>
+
+  <!-- NOTICE -->
+  <div class="notice">
+    <strong>Coming Soon / Not yet authorized</strong><br><br>
+    Quiet Ascent (Pty) Ltd is still in its foundational stage.  
+    We are currently working on verifications, licenses, growth, stability, and building the necessary assets and structure.<br><br>
+    <strong>Insights & Updates open:</strong> 15 January 2027<br>
+    <strong>Official Big Opening:</strong> 15 January 2028
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      Quiet Ascent is focused on investing in the Forex market and carefully selected large companies, while managing returns with discipline and care. 
+      We also aim to support and help small businesses grow through structured capital and long-term partnership.
+    </p>
+  </section>
+
+  <!-- VISION -->
+  <section id="vision">
+    <h2>Vision</h2>
+    <p>
+      This company exists to help people build real and lasting wealth.  
+      In the future, Quiet Ascent will expand to become a full Bank and a licensed Forex Broker — creating a complete financial ecosystem that serves individuals, families, and businesses with stability, trust, and quiet excellence.
+    </p>
+  </section>
+
+  <!-- FOUNDER -->
+  <section id="founder">
+    <h2>Founder</h2>
+    <div class="founder-box">
+      <h3>MR C THABANG</h3>
+      <p class="role">Founder of Quiet Ascent (Pty) Ltd</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-box">
+      <p style="margin-bottom: 8px;">Email</p>
+      <a href="mailto:QuietAscentSA@GMAIL.COM">QuietAscentSA@GMAIL.COM</a>
+
+      <div class="socials">
+        <a href="https://x.com/QuietAscentSA" target="_blank">X @QuietAscentSA</a>
+        <a href="https://instagram.com/quiet_ascent_pty_ltd_" target="_blank">Instagram @quiet_ascent_pty_ltd_</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Quiet Ascent (Pty) Ltd. All rights reserved.<br>
+    Building steadily. The future is in our hands.
+  </footer>
+
+  <script>
+    // Countdown to 15 January 2027
+    const targetDate = new Date("January 15, 2027 00:00:00").getTime();
+
+    const timer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        String(days).padStart(2, '0') + " : " +
+        String(hours).padStart(2, '0') + " : " +
+        String(minutes).padStart(2, '0') + " : " +
+        String(seconds).padStart(2, '0');
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "OPEN FOR UPDATES";
+      }
+    }, 1000);
+
+    // Hide countdown after 6.5 seconds
+    setTimeout(() => {
+      document.getElementById("countdown-screen").classList.add("hidden");
+    }, 6500);
+  </script>
+
+</body>
+</html>
