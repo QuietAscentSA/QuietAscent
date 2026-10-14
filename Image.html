@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiet Ascent (Pty) Ltd | Institutional Showcase</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#0b1120',
+                            950: '#050811',
+                        },
+                        gold: {
+                            400: '#d4af37',
+                            500: '#c5a059',
+                            600: '#a3813c',
+                        },
+                        paper: '#faf9f6'
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #d4af37 0%, #c5a059 50%, #99752b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .poster-shadow {
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08), 0 0 15px rgba(0, 0, 0, 0.03);
+        }
+        .dark .poster-shadow {
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 20px rgba(197, 160, 89, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-navy-950 text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300 min-h-screen flex flex-col justify-between selection:bg-gold-500 selection:text-white">
+
+    <!-- Sticky Executive Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-navy-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo & Name -->
+            <div class="flex items-center space-x-3">
+                <!-- Apex Logo SVG -->
+                <svg class="w-8 h-8 text-navy-900 dark:text-gold-500" viewBox="0 0 100 100" fill="currentColor">
+                    <polygon points="50,15 15,85 32,85 50,48 68,85 85,85" fill="#0b1120" class="dark:fill-slate-100"/>
+                    <polygon points="50,15 41,33 59,33" fill="#c5a059"/>
+                </svg>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl sm:text-2xl font-semibold tracking-tight text-navy-900 dark:text-white leading-none">
+                        Quiet Ascent <span class="text-xs font-sans font-normal text-gray-500 dark:text-gray-400">(Pty) Ltd</span>
+                    </span>
+                    <span class="text-[10px] uppercase tracking-widest text-gold-600 dark:text-gold-400 mt-1 font-medium">
+                        Private Holding Entity
+                    </span>
+                </div>
+            </div>
+
+            <!-- Status Badge & Controls -->
+            <div class="flex items-center space-x-3 sm:space-x-4">
+                <span class="hidden md:inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 mr-2 animate-pulse"></span>
+                    Internal Capital Only
+                </span>
+
+                <!-- Dark/Light Theme Toggle -->
+                <button id="themeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-navy-800 text-gray-600 dark:text-gold-400 hover:bg-gray-200 dark:hover:bg-navy-700 transition" title="Toggle Mode">
+                    <svg id="sunIcon" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-8.66h-1M4.34 12h-1m15.36 6.36l-.7-.7M6.34 6.34l-.7-.7m12.02 0l-.7.7M6.34 17.66l-.7.7M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+                    <svg id="moonIcon" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 flex-grow w-full">
+        
+        <!-- Hero Title Section -->
+        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-4">
+            <h1 class="font-serif text-3xl sm:text-5xl font-bold text-navy-900 dark:text-white tracking-tight">
+                Corporate Communications
+            </h1>
+            <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-sans max-w-2xl mx-auto">
+                Official executive notes and proprietary statistics for Quiet Ascent (Pty) Ltd. Rendered in full digital precision.
+            </p>
+            <div class="w-16 h-0.5 bg-gold-500 mx-auto mt-4"></div>
+        </div>
+
+        <!-- Poster Showcase Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start max-w-6xl mx-auto">
+            
+            <!-- POSTER 1: About Quiet Ascent -->
+            <div class="bg-paper dark:bg-navy-900 border border-gray-200 dark:border-gray-800 rounded-lg p-8 sm:p-12 poster-shadow relative flex flex-col justify-between transition-all duration-300">
+                <div class="space-y-8 text-center">
+                    
+                    <!-- Top Logo Emblem -->
+                    <div class="flex justify-center">
+                        <svg class="w-12 h-12" viewBox="0 0 100 100">
+                            <polygon points="50,15 15,85 32,85 50,48 68,85 85,85" fill="#0b1120" class="dark:fill-slate-100"/>
+                            <polygon points="50,15 41,33 59,33" fill="#c5a059"/>
+                        </svg>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h2 class="font-serif text-2xl sm:text-4xl font-semibold text-navy-900 dark:text-white tracking-wide">
+                        About Quiet Ascent
+                    </h2>
+
+                    <!-- Body Content -->
+                    <p class="text-xs sm:text-sm md:text-base leading-relaxed text-gray-800 dark:text-gray-300 font-sans text-justify sm:text-center max-w-lg mx-auto">
+                        <strong class="font-semibold text-navy-900 dark:text-white">Quiet Ascent is a private holding and asset management entity</strong> focused on structured <strong class="font-semibold text-navy-900 dark:text-white">wealth accumulation</strong>. We <strong class="font-semibold text-navy-900 dark:text-white">strategically allocate corporate capital into high-conviction macroeconomic sectors</strong>—including the <strong class="font-semibold text-navy-900 dark:text-white">foreign exchange market and select large-cap equities</strong>—while <strong class="font-semibold text-navy-900 dark:text-white">maintaining strict risk parameters</strong>. We are <strong class="font-semibold text-navy-900 dark:text-white">systematically building the foundational balance sheet, asset base</strong>, and operational framework <strong class="font-semibold text-navy-900 dark:text-white">required to transition into a major financial institution</strong>.
+                    </p>
+
+                    <!-- Gold Line Divider -->
+                    <div class="w-1/2 h-[1px] bg-gold-500/40 mx-auto my-6"></div>
+
+                    <!-- Sub-brand -->
+                    <div class="space-y-1">
+                        <p class="font-serif text-lg text-navy-900 dark:text-gray-200 tracking-wider">
+                            Quiet <span class="text-gold-500 font-serif italic">Ascent</span>
+                        </p>
+                        <p class="text-[11px] tracking-widest text-navy-900 dark:text-gray-400 font-mono uppercase">
+                            (Pty) Ltd
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Ribbon Bookmark Icon at Bottom -->
+                <div class="flex justify-center mt-10 pt-4">
+                    <svg class="w-6 h-8 text-gold-500" viewBox="0 0 24 32" fill="currentColor">
+                        <path d="M0 0H24V32L12 24L0 32V0Z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- POSTER 2: Proprietary Performance Note -->
+            <div class="bg-paper dark:bg-navy-900 border border-gray-200 dark:border-gray-800 rounded-lg p-8 sm:p-12 poster-shadow relative flex flex-col justify-between transition-all duration-300">
+                <div class="space-y-8 text-center">
+                    
+                    <!-- Top Logo Emblem -->
+                    <div class="flex justify-center">
+                        <svg class="w-12 h-12" viewBox="0 0 100 100">
+                            <polygon points="50,15 15,85 32,85 50,48 68,85 85,85" fill="#0b1120" class="dark:fill-slate-100"/>
+                            <polygon points="50,15 41,33 59,33" fill="#c5a059"/>
+                        </svg>
+                    </div>
+
+                    <!-- Main Heading + Chart Icon -->
+                    <div class="flex items-center justify-center space-x-2">
+                        <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-navy-900 dark:text-white tracking-wide">
+                            Proprietary Performance Note
+                        </h2>
+                        <!-- Candlestick chart inline icon -->
+                        <svg class="w-6 h-6 text-gray-500 dark:text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 16v-4m0 0V8m0 4h.01M12 18v-6m0 0V6m0 6h.01M17 12V8m0 0V4m0 4h.01"/>
+                        </svg>
+                    </div>
+
+                    <!-- Body Content -->
+                    <p class="text-xs sm:text-sm md:text-base leading-relaxed text-gray-800 dark:text-gray-300 font-sans max-w-lg mx-auto">
+                        Following our foundational positioning established on <strong class="font-semibold text-navy-900 dark:text-white">31 July 2025</strong>, the company’s <strong class="font-semibold text-navy-900 dark:text-white">internal proprietary capital allocation</strong> has recorded a net return of <strong class="font-bold text-navy-900 dark:text-white">+1,686%</strong> through to <strong class="font-semibold text-navy-900 dark:text-white">Q4 2026</strong>.
+                    </p>
+
+                    <!-- Gold Line Divider -->
+                    <div class="w-1/2 h-[1px] bg-gold-500/40 mx-auto my-4"></div>
+
+                    <!-- Highlight Disclaimer Box (Gold text) -->
+                    <div class="p-4 sm:p-6 rounded-md bg-gold-500/5 dark:bg-gold-500/10 border border-gold-500/20">
+                        <p class="font-sans font-medium text-xs sm:text-sm text-gold-600 dark:text-gold-400 leading-relaxed max-w-md mx-auto">
+                            These results reflect the compounding of corporate net worth only and do not represent any public or client-facing performance.
+                        </p>
+                    </div>
+
+                    <!-- Logo Footer -->
+                    <div class="pt-2 space-y-1">
+                        <div class="flex items-center justify-center space-x-2">
+                            <span class="font-serif text-xl sm:text-2xl font-semibold text-navy-900 dark:text-white">Quiet</span>
+                            <svg class="w-5 h-5" viewBox="0 0 100 100">
+                                <polygon points="50,15 15,85 32,85 50,48 68,85 85,85" fill="#0b1120" class="dark:fill-slate-100"/>
+                                <polygon points="50,15 41,33 59,33" fill="#c5a059"/>
+                            </svg>
+                            <span class="font-serif text-xl sm:text-2xl font-semibold text-navy-900 dark:text-white">Ascent</span>
+                        </div>
+                        <p class="text-[10px] tracking-widest text-navy-900 dark:text-gray-400 font-mono uppercase">
+                            (Pty) Ltd
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Ribbon Bookmark Icon at Bottom -->
+                <div class="flex justify-center mt-10 pt-4">
+                    <svg class="w-6 h-8 text-gold-500" viewBox="0 0 24 32" fill="currentColor">
+                        <path d="M0 0H24V32L12 24L0 32V0Z"/>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Quick Code Copy Tool for GitHub -->
+        <div class="mt-16 sm:mt-20 max-w-2xl mx-auto bg-white dark:bg-navy-900 rounded-xl p-6 border border-gray-200 dark:border-gray-800 text-center shadow-lg">
+            <h3 class="font-serif text-lg font-semibold text-navy-900 dark:text-white mb-2">
+                Deploy to GitHub Pages
+            </h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">
+                Click below to copy this entire standard HTML code and paste it directly into your GitHub repository editor (`index.html`).
+            </p>
+            <button id="copyCodeBtn" onclick="copyFullCode()" class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-navy-900 dark:bg-gold-500 text-white dark:text-navy-900 font-medium text-xs sm:text-sm hover:opacity-95 transition shadow-md group">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                <span id="copyBtnText">Copy HTML Code for GitHub</span>
+            </button>
+        </div>
+
+    </main>
+
+    <!-- Institutional Footer -->
+    <footer class="bg-white dark:bg-navy-900 border-t border-gray-200 dark:border-gray-800 py-10 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <!-- Left Info -->
+            <div class="text-center md:text-left space-y-1">
+                <p class="font-serif text-base font-semibold text-navy-900 dark:text-white">
+                    Quiet Ascent (Pty) Ltd
+                </p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 max-w-md">
+                    Strictly private proprietary capital entity. We do not manage public funds or offer client-facing investment services.
+                </p>
+            </div>
+
+            <!-- Center Direct Contact Links -->
+            <div class="flex flex-wrap justify-center gap-4 text-xs font-medium text-gray-600 dark:text-gray-300">
+                <a href="mailto:QuietAscentSA@gmail.com" class="hover:text-gold-500 transition flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    Email
+                </a>
+                <span>•</span>
+                <a href="https://x.com/QuietAscentSA" target="_blank" class="hover:text-gold-500 transition">
+                    X (@QuietAscentSA)
+                </a>
+                <span>•</span>
+                <a href="https://instagram.com/quiet_ascent_pty_ltd_" target="_blank" class="hover:text-gold-500 transition">
+                    Instagram
+                </a>
+            </div>
+
+            <!-- Right Legal -->
+            <div class="text-xs text-gray-400 dark:text-gray-500 text-center md:text-right">
+                &copy; 2026 Quiet Ascent (Pty) Ltd.<br>All rights reserved.
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Theme Toggle Functionality
+        const themeToggleBtn = document.getElementById('themeToggle');
+        
+        // System preference check
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        });
+
+        // Copy Code Functionality
+        function copyFullCode() {
+            const htmlContent = document.documentElement.outerHTML;
+            
+            // Fallback copy for iframe/mobile safety
+            const dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = "<!DOCTYPE html>\n" + htmlContent;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+
+            const copyBtnText = document.getElementById('copyBtnText');
+            copyBtnText.innerText = "Copied to Clipboard!";
+            setTimeout(() => {
+                copyBtnText.innerText = "Copy HTML Code for GitHub";
+            }, 3000);
+        }
+    </script>
+</body>
+                          </html>
